@@ -1,4 +1,5 @@
-const input = document.querySelector('input');
+const seconds = document.querySelector('.seconds');
+const minutes = document.querySelector('.minutes');
 const button = document.querySelector('button');
 const out = document.querySelector('.timer');
 const outOfTime = document.querySelector('.time_gone');
@@ -6,7 +7,7 @@ const outOfTime = document.querySelector('.time_gone');
 function printNumbers(from, to) {
   let current = from;
 
-  function go() {
+  function seconds() {
     out.innerHTML = current
     if (current == to) {
       clearInterval(timerId);
@@ -19,10 +20,10 @@ function printNumbers(from, to) {
     console.log(current)
   }
 
-  go();
-  let timerId = setInterval(go, 1000);
+  seconds();
+  let timerId = setInterval(seconds, 1000);
 }
 
 button.addEventListener('click', () => {
-  printNumbers(input.value, 0);
+  printNumbers(seconds.value, 0);
 })
